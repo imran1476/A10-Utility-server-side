@@ -1,11 +1,13 @@
 const Bill = require("../models/Bill");
 
-// Get all bills
+// Get all bills (newest first)
 exports.getBills = async (req, res) => {
   try {
     const { category, limit } = req.query;
     const query = category ? { category } : {};
-    const bills = await Bill.find(query).limit(parseInt(limit) || 0);
+    const bills = await Bill.find(query)
+      .sort({ date: -1 }) // newest first
+      .limit(parseInt(limit) || 0);
     res.json(bills);
   } catch (err) {
     res.status(500).json({ message: err.message });
