@@ -1,4 +1,3 @@
-
 # Utility Bill Management System
 
 **Live Site:** `https://your-live-site-url.com`
@@ -171,4 +170,33 @@ PUT   /api/my-bills/:id                           # update a paid bill
 DELETE/api/my-bills/:id                           # delete a paid bill
 ```
 
-Protect private routes with JWT or 
+Protect private routes with JWT or Firebase token verification.
+
+---
+
+## Client Behavior Notes & Validation Rules
+
+* **Password validation**: Must contain at least one uppercase, one lowercase and minimum 6 characters. Show inline validation errors and **prevent registration** if invalid.
+* **Pay Bill button**: Only enabled if bill’s `date` month equals the current month. Otherwise show disabled state + tooltip/explanation.
+* **No `alert()`**: Use React-Toastify or SweetAlert2 for success/error messages.
+* **Logged in user reload**: Implement auth persistence (localStorage/session or Firebase onAuthStateChanged) so private routes remain accessible after page reload.
+
+---
+
+## UI & Design Guidelines
+
+* Keep headings, buttons and card sizes consistent across pages.
+* Use grid layout for bills (3-column on desktop) and equal-sized cards.
+* Include a carousel with at least 3 meaningful slides on Home.
+* Add two extra meaningful sections on Home (e.g., How It Works, User Testimonials, Pricing, or Latest Notices).
+* Replace old Twitter bird with new X logo where applicable.
+
+---
+
+## Download Report (Challenge)
+
+* Use `jsPDF` + `jspdf-autotable` to generate a PDF from the My Pay Bills table.
+* Provide a `Download Report` button on My Pay Bills page that exports only the currently logged-in user’s paid bills.
+
+---
+
