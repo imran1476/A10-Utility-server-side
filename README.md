@@ -215,23 +215,4 @@ Protect private routes with JWT or Firebase token verification.
 
 ---
 
-## Submission Notes for Examiner
 
-Include the following in your submission message:
-
-* Client repo link and **at least 15** highlighted commit messages (short list of important commits).
-* Server repo link and **at least 8** highlighted commit messages.
-* Live website URL.
-* Short note describing how you seeded the bills and how to run the app.
-
----
-
-## Author
-
-Your Name — `your-email@example.com`
-
----
-
-## License
-
-MIT
